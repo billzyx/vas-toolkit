@@ -1,0 +1,17 @@
+# Config for alexa.py
+account: "xxx"
+password: "xxx"
+# save_dir: Path for parent dir
+save_dir: "vas_save"
+# session_name: Name for child dir. Optional. Default current datetime.
+# Don't put "/" unless you want multiple directories
+#session_name: "2021-11-16"
+reverse: true
+#device: "Echo Show"
+date_from: "11/16/2021"
+date_to: "11/16/2021"
+time_from: "16:00"
+time_to: "17:30"
+save_date_time: false
+# profile: Profile for chrome. Cookie related.
+#profile: "example"

@@ -1,0 +1,36 @@
+# Config for auto_multi_config_generator.py. Generating configs for alexa.py
+
+save_dir_path: "config/multi/001"
+
+accounts:
+  - account: "xxx@gmail.com"
+    password: "xxx"
+    profile: "xxx"
+    save_dir: "vas_save/xxx"
+    device: "Echo Show"
+
+  - account: "yyy@gmail.com"
+    password: "yyy"
+    profile: "yyy"
+    save_dir: "vas_save/yyy"
+#    device: "xxx"
+
+
+sessions:
+  - session_name: "2022-01-14"
+    reverse: true
+    date_from: "01/14/2022"
+    date_to: "01/14/2022"
+#    time_from: "10:58"
+#    time_to: "10:58"
+    save_date_time: true
+
+  - session_name: "2022-02-11"
+    reverse: true
+    date_from: "02/11/2022"
+    date_to: "02/11/2022"
+    time_from: "0:00"
+    time_to: "23:59"
+    save_date_time: true
+
+

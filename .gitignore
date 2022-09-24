@@ -1,0 +1,15 @@
+*.log
+.idea
+selenium
+NUL
+*.wav
+vas_save
+*.xlsx
+vas_final
+vas_video
+vas_video_cut
+config
+profiles
+*.cha
+*.txt
+*.xls
