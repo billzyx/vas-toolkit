@@ -39,7 +39,8 @@ def init_driver(profile):
     chrome_options = Options()
     # use local data directory
     # headless mode can't be enabled since then amazon shows captcha
-    chrome_options.add_argument("user-data-dir=profiles/{}".format(profile))
+    work_dir_path = os.getcwd()
+    chrome_options.add_argument("user-data-dir={}".format(os.path.join(work_dir_path, "profiles", profile)))
     chrome_options.add_argument("start-maximized")
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument('--disable-gpu')
