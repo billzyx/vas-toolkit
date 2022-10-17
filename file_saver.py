@@ -45,7 +45,7 @@ class FileSaver:
         self.text_lines.append(text_line)
 
     def end_of_add(self):
-        with open(self.text_file_path, 'w') as f:
+        with open(self.text_file_path, 'w', encoding='utf-8') as f:
             for line in self.text_lines:
                 f.write(line)
                 f.write("\n")
