@@ -233,7 +233,7 @@ def apply_labeling(input_dir, output_dir, elms):
                          "@ID:\teng|VAS|VAS|||||Media|||", '@Media: ' + file_num.split('/')[-1] + '.wav']
             lines = text_list + lines
             lines.append('@End')
-            with open(text_file_out_path, mode='w') as out_f:
+            with open(text_file_out_path, mode='w', encoding='utf-8') as out_f:
                 for idx in range(len(lines)):
                     out_f.write(lines[idx])
                     out_f.write('\n')

@@ -10,7 +10,7 @@ def main():
         help="Directory of config files."
     )
     args = vars(ap.parse_args())
-    with open(args['config_file_path'], 'r') as f:
+    with open(args['config_file_path'], 'r', encoding='utf-8') as f:
         multi_args = yaml.safe_load(f)
     os.makedirs(multi_args['save_dir_path'], exist_ok=True)
     account_list = multi_args['accounts']
@@ -23,7 +23,7 @@ def main():
             file_name = '{}-{}'.format(profile, session_name)
             session['session_name'] = '{}_{}'.format(profile, session_name)
             session.update(account)
-            with open(os.path.join(multi_args['save_dir_path'], '{}.yaml'.format(file_name)), 'w') as f:
+            with open(os.path.join(multi_args['save_dir_path'], '{}.yaml'.format(file_name)), 'w', encoding='utf-8') as f:
                 yaml.dump(session, f)
 
 

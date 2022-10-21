@@ -373,7 +373,7 @@ def main():
     )
     args = vars(ap.parse_args())
     config_file_path = args['config_file_path']
-    with open(config_file_path, 'r') as file:
+    with open(config_file_path, 'r', encoding='utf-8') as file:
         args = yaml.safe_load(file)
     default_dict = {
         "save_dir": "vas_save",
