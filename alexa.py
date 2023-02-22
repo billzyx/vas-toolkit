@@ -287,7 +287,7 @@ def parse_page(driver, reverse=False, file_saver=None, start_date=None, end_date
         if not text_boxes:
             logger.info("Non-text file. Skipped.")
             continue
-        for record_item_box in box.find_elements_by_class_name('record-item'):
+        for idx, record_item_box in enumerate(box.find_elements_by_class_name('record-item')):
             text_boxes = record_item_box.find_elements_by_class_name('record-item-text')
             assert len(text_boxes) <= 1
             voice_boxes = record_item_box.find_elements_by_class_name('play-audio-button')
@@ -321,6 +321,12 @@ def parse_page(driver, reverse=False, file_saver=None, start_date=None, end_date
                 assert len(text_boxes) == len(voice_boxes) == 1
                 voice_boxes = record_item_box.find_elements_by_class_name('play-audio-button')
                 voice_boxes[voice_box_idx].click()
+
+                # Temporary fix or Amazon server bug that we need click the play bottom twice
+                record_item_box = box.find_elements_by_class_name('record-item')[idx]
+                voice_boxes = record_item_box.find_elements_by_class_name('play-audio-button')
+                voice_boxes[voice_box_idx].click()
+
                 request = driver.wait_for_request('https://www.amazon.com/alexa-privacy/apd/rvh/audio\?.+',
                                                   timeout=100)
                 logger.info('GET Audio: ' + str(request.url))
