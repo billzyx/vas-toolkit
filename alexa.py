@@ -288,6 +288,7 @@ def parse_page(driver, reverse=False, file_saver=None, start_date=None, end_date
             logger.info("Non-text file. Skipped.")
             continue
         for idx, record_item_box in enumerate(box.find_elements_by_class_name('record-item')):
+            record_item_box = box.find_elements_by_class_name('record-item')[idx]
             text_boxes = record_item_box.find_elements_by_class_name('record-item-text')
             assert len(text_boxes) <= 1
             voice_boxes = record_item_box.find_elements_by_class_name('play-audio-button')
